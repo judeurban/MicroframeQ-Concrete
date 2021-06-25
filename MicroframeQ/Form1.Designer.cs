@@ -33,6 +33,8 @@
             this.towerBox2 = new System.Windows.Forms.ListBox();
             this.moveTower1 = new System.Windows.Forms.Button();
             this.moveTower2 = new System.Windows.Forms.Button();
+            this.NextButton2 = new System.Windows.Forms.Button();
+            this.NextButton1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // truckListBox
@@ -42,6 +44,7 @@
             this.truckListBox.Name = "truckListBox";
             this.truckListBox.Size = new System.Drawing.Size(131, 277);
             this.truckListBox.TabIndex = 0;
+            this.truckListBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TruckListBox_KeyDown);
             // 
             // towerBox1
             // 
@@ -58,6 +61,7 @@
             this.towerBox2.Name = "towerBox2";
             this.towerBox2.Size = new System.Drawing.Size(131, 277);
             this.towerBox2.TabIndex = 2;
+            this.towerBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TowerBox2_KeyDown);
             // 
             // moveTower1
             // 
@@ -77,12 +81,35 @@
             this.moveTower2.TabIndex = 4;
             this.moveTower2.Text = "--> Tower 2";
             this.moveTower2.UseVisualStyleBackColor = true;
+            this.moveTower2.Click += new System.EventHandler(this.MoveTower2_Click_1);
+            // 
+            // NextButton2
+            // 
+            this.NextButton2.Location = new System.Drawing.Point(635, 362);
+            this.NextButton2.Name = "NextButton2";
+            this.NextButton2.Size = new System.Drawing.Size(75, 23);
+            this.NextButton2.TabIndex = 5;
+            this.NextButton2.Text = "Next";
+            this.NextButton2.UseVisualStyleBackColor = true;
+            this.NextButton2.Click += new System.EventHandler(this.NextButton2_Click);
+            // 
+            // NextButton1
+            // 
+            this.NextButton1.Location = new System.Drawing.Point(87, 362);
+            this.NextButton1.Name = "NextButton1";
+            this.NextButton1.Size = new System.Drawing.Size(75, 23);
+            this.NextButton1.TabIndex = 6;
+            this.NextButton1.Text = "Next";
+            this.NextButton1.UseVisualStyleBackColor = true;
+            this.NextButton1.Click += new System.EventHandler(this.NextButton1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NextButton1);
+            this.Controls.Add(this.NextButton2);
             this.Controls.Add(this.moveTower2);
             this.Controls.Add(this.moveTower1);
             this.Controls.Add(this.towerBox2);
@@ -101,6 +128,8 @@
         private System.Windows.Forms.ListBox towerBox2;
         private System.Windows.Forms.Button moveTower1;
         private System.Windows.Forms.Button moveTower2;
+        private System.Windows.Forms.Button NextButton2;
+        private System.Windows.Forms.Button NextButton1;
     }
 }
 

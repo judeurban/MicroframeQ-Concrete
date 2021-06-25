@@ -149,5 +149,98 @@ namespace MicroframeQ
             //towerBox1.DataSource = Tower1List;
 
         }
+
+        private void MoveTower2_Click_1(object sender, EventArgs e)
+        {
+            if (truckListBox.Items.Count == 0)
+            {
+                return;
+            }
+            //if nothing is selected
+            if (truckListBox.SelectedItem == null)
+            {
+                MessageBox.Show("No item selected.");
+                return;
+            }
+            if (TempTruckList.Count == 0)
+            {
+                return;
+            }
+            //find selected item
+            //remove item from temptrucklist
+            //add item to tower1 listbox
+            //reset data source
+
+            int item_index;
+            string item_value;
+            //there's only one item, so we don't need to select a truck. Just remove the top item
+            if (truckListBox.Items.Count == 1)
+            {
+                item_index = 0;
+                item_value = (string)truckListBox.Items[0].ToString();
+            }
+            else
+            {
+                //define selected item to move
+                item_index = truckListBox.SelectedIndex;
+                item_value = truckListBox.SelectedItem.ToString();
+            }
+
+            //move from TempTruckList to Tower1List
+            TempTruckListBS.RemoveAt(item_index);
+            TempTruckList.Sort();
+            truckListBox.DataSource = TempTruckListBS;
+
+            Tower2BS.Add(Int32.Parse(item_value));
+            towerBox2.DataSource = Tower2BS;
+
+        }
+
+        private void TruckListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Left)
+            {
+                moveTower1.PerformClick();
+            }
+            else if (e.KeyValue == (char)Keys.Right)
+            {
+                moveTower2.PerformClick();
+            }
+        }
+
+        private void TowerBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+            {
+                //.PerformClick();
+                return;
+            }
+        }
+
+        private void NextButton1_Click(object sender, EventArgs e)
+        {
+            if(Tower1BS.Count == 0) return;
+
+            //move from Tower1List to TempTruckList  
+            TempTruckListBS.Add(towerBox1.Items[0]);
+            Tower1BS.RemoveAt(0);
+
+            //update boxes
+            truckListBox.DataSource = TempTruckListBS;
+            towerBox1.DataSource = Tower1BS;
+        }
+
+        private void NextButton2_Click(object sender, EventArgs e)
+        {
+            if (Tower2BS.Count == 0) return;
+
+            //move from Tower1List to TempTruckList  
+            TempTruckListBS.Add(towerBox2.Items[0]);
+            Tower2BS.RemoveAt(0);
+
+            //update boxes
+            truckListBox.DataSource = TempTruckListBS;
+            towerBox1.DataSource = Tower1BS;
+        }
     }
 }
