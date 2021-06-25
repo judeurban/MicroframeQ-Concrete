@@ -80,6 +80,24 @@ namespace MicroframeQ
             }
             myTruckFile.Close();
         }
+
+        private static void WriteUserCOMSettings(string s)
+        {
+            //this function writes any updated serial COM settings
+            string[] oldfile = File.ReadAllLines(UserSettingsPath);
+
+            if (s[0].Equals('1'))
+            {
+                oldfile[0] = s[1].ToString();                                                       //display 1, so change row 1, leave row 2
+            }
+            else if (s[0].Equals('2'))
+            {
+                oldfile[1] = s[1].ToString();                                                       //display 2, so change row 2, leave row 1
+            }
+            else return;
+            File.WriteAllText(UserSettingsPath, oldfile[0] + "\n" + oldfile[1]);
+        }
+
         private void UpdateTruckListBox()
         {
             truckListBox.DataSource = null;
@@ -184,6 +202,7 @@ namespace MicroframeQ
 
             UpdateTruckListBox();
             UpdateTower1ListBox();
+            UpdateLiveQueue(1);
         }
 
         private void MoveTower2_Click_1(object sender, EventArgs e)
@@ -229,6 +248,7 @@ namespace MicroframeQ
 
             UpdateTruckListBox();
             UpdateTower2ListBox();
+            UpdateLiveQueue(2);
         }
 
         private void TruckListBox_KeyDown(object sender, KeyEventArgs e)
@@ -264,6 +284,7 @@ namespace MicroframeQ
             //update boxes
             UpdateTower1ListBox();
             UpdateTruckListBox();
+            UpdateLiveQueue(1);
         }
 
         private void NextButton2_Click(object sender, EventArgs e)
@@ -278,6 +299,7 @@ namespace MicroframeQ
             //update boxes
             UpdateTower2ListBox();
             UpdateTruckListBox();
+            UpdateLiveQueue(2);
         }
 
         private void TowerBox1_KeyDown(object sender, KeyEventArgs e)
@@ -358,12 +380,52 @@ namespace MicroframeQ
 
         //      SERIAL COMMUNICATION        //
 
+        private void UpdateLiveQueue(int towerswitch)
+        {
+            try
+            {
+                switch (towerswitch)
+                {
+                    case 1:
+                        if (towerBox1.Items.Count == 0)
+                        {
+                            TowerBox1_live.Text = "Now Displaying:\n";
+                            SendBlank1(); return;                                   //catch the bug before it 
+                        }
+                        else
+                        {
+                            TowerBox1_live.Text = "Now Displaying:\n" + towerBox1.Items[0].ToString();            //update the live queue one
+                            Disp1_SendMessage(towerBox1.Items[0].ToString());                                            //update display 1
+                        }
+                        break;
+                    case 2:
+                        if (towerBox2.Items.Count == 0)
+                        {
+                            TowerBox2_live.Text = "Now Displaying:\n";
+                            SendBlank2(); return;                                   //catch the bug before it crashes
+                        }
+                        else
+                        {
+                            TowerBox2_live.Text = "Now Displaying:\n" + towerBox2.Items[0].ToString();            //update the live queue one
+                            Disp2_SendMessage(towerBox2.Items[0].ToString());                                      //update display 1
+                        }
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return;
+        }
+
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (serialPort1.IsOpen) SendBlank1(); serialPort1.Close();                                      //close any open serial ports
             if (serialPort2.IsOpen) SendBlank2(); serialPort2.Close();
 
-            //update the text file
+            //update the txt file
             WriteUserSettings();
         }
 
@@ -376,6 +438,21 @@ namespace MicroframeQ
             try
             {
                 serialPort1.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        private void SetupSerial2(String portname)
+        {
+            if (serialPort2.IsOpen) serialPort2.Close();
+
+            serialPort2.PortName = portname;
+
+            try
+            {
+                serialPort2.Open();
             }
             catch (Exception ex)
             {
@@ -424,8 +501,148 @@ namespace MicroframeQ
             }
         }
 
+        private void Disp1_SendMessage(String s)
+        {
+            Disp1_OpenCommunication();
+            if (!serialPort1.IsOpen) return;
 
+            serialPort1.Write(s + Environment.NewLine);
+        }
 
+        private void Disp2_SendMessage(String s)
+        {
+            Disp2_OpenCommunication();
+            if (!serialPort2.IsOpen) return;
+
+            serialPort2.Write(s + Environment.NewLine);
+        }
+
+        private void Select_COM_Port(UInt16 COMswitch)
+        {
+            //send a string to WriteUserSettings. This rewrites the text file in the documents folder which stores the user's COM settings
+            WriteUserCOMSettings(COMswitch.ToString());
+
+            if (COMswitch < 20)
+            {
+                ClearChecks1();
+                if (serialPort1.IsOpen) serialPort1.Close();
+            }
+            else
+            {
+                ClearChecks2();
+                if (serialPort2.IsOpen) serialPort2.Close();
+            }
+
+            Console.WriteLine(COMswitch.ToString() + " is the selected port");
+
+            switch (COMswitch)
+            {
+                case 11:
+                    SetupSerial1("COM1");
+                    display1_com1.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 12:
+                    SetupSerial1("COM2");
+                    display1_com2.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 13:
+                    SetupSerial1("COM3");
+                    display1_com3.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 14:
+                    SetupSerial1("COM4");
+                    display1_com4.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 15:
+                    SetupSerial1("COM5");
+                    display1_com5.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 16:
+                    SetupSerial1("COM6");
+                    display1_com6.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 17:
+                    SetupSerial1("COM7");
+                    display1_com7.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 18:
+                    SetupSerial1("COM8");
+                    display1_com8.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 21:
+                    SetupSerial2("COM1");
+                    display2_com1.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 22:
+                    SetupSerial2("COM2");
+                    display2_com2.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 23:
+                    SetupSerial2("COM3");
+                    display2_com3.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 24:
+                    SetupSerial2("COM4");
+                    display2_com4.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 25:
+                    SetupSerial2("COM5");
+                    display2_com5.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 26:
+                    SetupSerial2("COM6");
+                    display2_com6.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 27:
+                    SetupSerial2("COM7");
+                    display2_com7.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 28:
+                    SetupSerial2("COM8");
+                    display2_com8.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+            }
+        }
+        private void ClearChecks1()
+        {
+            display1_com1.Checked = false;
+            display1_com2.Checked = false;
+            display1_com3.Checked = false;
+            display1_com4.Checked = false;
+            display1_com5.Checked = false;
+            display1_com6.Checked = false;
+            display1_com7.Checked = false;
+            display1_com8.Checked = false;
+            return;
+        }
+        private void ClearChecks2()
+        {
+            display2_com1.Checked = false;
+            display2_com2.Checked = false;
+            display2_com3.Checked = false;
+            display2_com4.Checked = false;
+            display2_com5.Checked = false;
+            display2_com6.Checked = false;
+            display2_com7.Checked = false;
+            display2_com8.Checked = false;
+            return;
+        }
 
     }
 }

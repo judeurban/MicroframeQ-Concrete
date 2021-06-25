@@ -43,28 +43,30 @@
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.SerialCOMdropdown = new System.Windows.Forms.ToolStripMenuItem();
             this.dsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOM9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display1_com9 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.display2_com9 = new System.Windows.Forms.ToolStripMenuItem();
             this.clearTrucksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
+            this.TowerBox1_live = new System.Windows.Forms.Label();
+            this.TowerBox2_live = new System.Windows.Forms.Label();
             this.SettingsDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,151 +188,151 @@
             // dsToolStripMenuItem
             // 
             this.dsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cOM1ToolStripMenuItem,
-            this.cOM2ToolStripMenuItem,
-            this.cOM3ToolStripMenuItem,
-            this.cOM4ToolStripMenuItem,
-            this.cOM5ToolStripMenuItem,
-            this.cOM6ToolStripMenuItem,
-            this.cOM7ToolStripMenuItem,
-            this.cOM8ToolStripMenuItem,
-            this.cOM9ToolStripMenuItem});
+            this.display1_com1,
+            this.display1_com2,
+            this.display1_com3,
+            this.display1_com4,
+            this.display1_com5,
+            this.display1_com6,
+            this.display1_com7,
+            this.display1_com8,
+            this.display1_com9});
             this.dsToolStripMenuItem.Name = "dsToolStripMenuItem";
             this.dsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.dsToolStripMenuItem.Text = "Port 1";
             // 
-            // cOM1ToolStripMenuItem
+            // display1_com1
             // 
-            this.cOM1ToolStripMenuItem.CheckOnClick = true;
-            this.cOM1ToolStripMenuItem.Name = "cOM1ToolStripMenuItem";
-            this.cOM1ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM1ToolStripMenuItem.Text = "COM 1";
+            this.display1_com1.CheckOnClick = true;
+            this.display1_com1.Name = "display1_com1";
+            this.display1_com1.Size = new System.Drawing.Size(111, 22);
+            this.display1_com1.Text = "COM 1";
             // 
-            // cOM2ToolStripMenuItem
+            // display1_com2
             // 
-            this.cOM2ToolStripMenuItem.CheckOnClick = true;
-            this.cOM2ToolStripMenuItem.Name = "cOM2ToolStripMenuItem";
-            this.cOM2ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM2ToolStripMenuItem.Text = "COM 2";
+            this.display1_com2.CheckOnClick = true;
+            this.display1_com2.Name = "display1_com2";
+            this.display1_com2.Size = new System.Drawing.Size(111, 22);
+            this.display1_com2.Text = "COM 2";
             // 
-            // cOM3ToolStripMenuItem
+            // display1_com3
             // 
-            this.cOM3ToolStripMenuItem.CheckOnClick = true;
-            this.cOM3ToolStripMenuItem.Name = "cOM3ToolStripMenuItem";
-            this.cOM3ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM3ToolStripMenuItem.Text = "COM 3";
+            this.display1_com3.CheckOnClick = true;
+            this.display1_com3.Name = "display1_com3";
+            this.display1_com3.Size = new System.Drawing.Size(111, 22);
+            this.display1_com3.Text = "COM 3";
             // 
-            // cOM4ToolStripMenuItem
+            // display1_com4
             // 
-            this.cOM4ToolStripMenuItem.CheckOnClick = true;
-            this.cOM4ToolStripMenuItem.Name = "cOM4ToolStripMenuItem";
-            this.cOM4ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM4ToolStripMenuItem.Text = "COM 4";
+            this.display1_com4.CheckOnClick = true;
+            this.display1_com4.Name = "display1_com4";
+            this.display1_com4.Size = new System.Drawing.Size(111, 22);
+            this.display1_com4.Text = "COM 4";
             // 
-            // cOM5ToolStripMenuItem
+            // display1_com5
             // 
-            this.cOM5ToolStripMenuItem.CheckOnClick = true;
-            this.cOM5ToolStripMenuItem.Name = "cOM5ToolStripMenuItem";
-            this.cOM5ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM5ToolStripMenuItem.Text = "COM 5";
+            this.display1_com5.CheckOnClick = true;
+            this.display1_com5.Name = "display1_com5";
+            this.display1_com5.Size = new System.Drawing.Size(111, 22);
+            this.display1_com5.Text = "COM 5";
             // 
-            // cOM6ToolStripMenuItem
+            // display1_com6
             // 
-            this.cOM6ToolStripMenuItem.CheckOnClick = true;
-            this.cOM6ToolStripMenuItem.Name = "cOM6ToolStripMenuItem";
-            this.cOM6ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM6ToolStripMenuItem.Text = "COM 6";
+            this.display1_com6.CheckOnClick = true;
+            this.display1_com6.Name = "display1_com6";
+            this.display1_com6.Size = new System.Drawing.Size(111, 22);
+            this.display1_com6.Text = "COM 6";
             // 
-            // cOM7ToolStripMenuItem
+            // display1_com7
             // 
-            this.cOM7ToolStripMenuItem.CheckOnClick = true;
-            this.cOM7ToolStripMenuItem.Name = "cOM7ToolStripMenuItem";
-            this.cOM7ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM7ToolStripMenuItem.Text = "COM 7";
+            this.display1_com7.CheckOnClick = true;
+            this.display1_com7.Name = "display1_com7";
+            this.display1_com7.Size = new System.Drawing.Size(111, 22);
+            this.display1_com7.Text = "COM 7";
             // 
-            // cOM8ToolStripMenuItem
+            // display1_com8
             // 
-            this.cOM8ToolStripMenuItem.CheckOnClick = true;
-            this.cOM8ToolStripMenuItem.Name = "cOM8ToolStripMenuItem";
-            this.cOM8ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM8ToolStripMenuItem.Text = "COM 8";
+            this.display1_com8.CheckOnClick = true;
+            this.display1_com8.Name = "display1_com8";
+            this.display1_com8.Size = new System.Drawing.Size(111, 22);
+            this.display1_com8.Text = "COM 8";
             // 
-            // cOM9ToolStripMenuItem
+            // display1_com9
             // 
-            this.cOM9ToolStripMenuItem.CheckOnClick = true;
-            this.cOM9ToolStripMenuItem.Name = "cOM9ToolStripMenuItem";
-            this.cOM9ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
-            this.cOM9ToolStripMenuItem.Text = "COM 9";
+            this.display1_com9.CheckOnClick = true;
+            this.display1_com9.Name = "display1_com9";
+            this.display1_com9.Size = new System.Drawing.Size(111, 22);
+            this.display1_com9.Text = "COM 9";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6,
-            this.toolStripMenuItem7,
-            this.toolStripMenuItem8,
-            this.toolStripMenuItem9,
-            this.toolStripMenuItem10});
+            this.display2_com1,
+            this.display2_com2,
+            this.display2_com3,
+            this.display2_com4,
+            this.display2_com5,
+            this.display2_com6,
+            this.display2_com7,
+            this.display2_com8,
+            this.display2_com9});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
             this.toolStripMenuItem1.Text = "Port 2";
             // 
-            // toolStripMenuItem2
+            // display2_com1
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem2.Text = "COM 1";
+            this.display2_com1.Name = "display2_com1";
+            this.display2_com1.Size = new System.Drawing.Size(111, 22);
+            this.display2_com1.Text = "COM 1";
             // 
-            // toolStripMenuItem3
+            // display2_com2
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem3.Text = "COM 2";
+            this.display2_com2.Name = "display2_com2";
+            this.display2_com2.Size = new System.Drawing.Size(111, 22);
+            this.display2_com2.Text = "COM 2";
             // 
-            // toolStripMenuItem4
+            // display2_com3
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem4.Text = "COM 3";
+            this.display2_com3.Name = "display2_com3";
+            this.display2_com3.Size = new System.Drawing.Size(111, 22);
+            this.display2_com3.Text = "COM 3";
             // 
-            // toolStripMenuItem5
+            // display2_com4
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem5.Text = "COM 4";
+            this.display2_com4.Name = "display2_com4";
+            this.display2_com4.Size = new System.Drawing.Size(111, 22);
+            this.display2_com4.Text = "COM 4";
             // 
-            // toolStripMenuItem6
+            // display2_com5
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem6.Text = "COM 5";
+            this.display2_com5.Name = "display2_com5";
+            this.display2_com5.Size = new System.Drawing.Size(111, 22);
+            this.display2_com5.Text = "COM 5";
             // 
-            // toolStripMenuItem7
+            // display2_com6
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem7.Text = "COM 6";
+            this.display2_com6.Name = "display2_com6";
+            this.display2_com6.Size = new System.Drawing.Size(111, 22);
+            this.display2_com6.Text = "COM 6";
             // 
-            // toolStripMenuItem8
+            // display2_com7
             // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem8.Text = "COM 7";
+            this.display2_com7.Name = "display2_com7";
+            this.display2_com7.Size = new System.Drawing.Size(111, 22);
+            this.display2_com7.Text = "COM 7";
             // 
-            // toolStripMenuItem9
+            // display2_com8
             // 
-            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem9.Text = "COM 8";
+            this.display2_com8.Name = "display2_com8";
+            this.display2_com8.Size = new System.Drawing.Size(111, 22);
+            this.display2_com8.Text = "COM 8";
             // 
-            // toolStripMenuItem10
+            // display2_com9
             // 
-            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(111, 22);
-            this.toolStripMenuItem10.Text = "COM 9";
+            this.display2_com9.Name = "display2_com9";
+            this.display2_com9.Size = new System.Drawing.Size(111, 22);
+            this.display2_com9.Text = "COM 9";
             // 
             // clearTrucksToolStripMenuItem
             // 
@@ -339,11 +341,31 @@
             this.clearTrucksToolStripMenuItem.Text = "Clear Trucks...";
             this.clearTrucksToolStripMenuItem.Click += new System.EventHandler(this.ClearTrucksToolStripMenuItem_Click);
             // 
+            // TowerBox1_live
+            // 
+            this.TowerBox1_live.AutoSize = true;
+            this.TowerBox1_live.Location = new System.Drawing.Point(255, 179);
+            this.TowerBox1_live.Name = "TowerBox1_live";
+            this.TowerBox1_live.Size = new System.Drawing.Size(83, 13);
+            this.TowerBox1_live.TabIndex = 13;
+            this.TowerBox1_live.Text = "Now Displaying:";
+            // 
+            // TowerBox2_live
+            // 
+            this.TowerBox2_live.AutoSize = true;
+            this.TowerBox2_live.Location = new System.Drawing.Point(575, 179);
+            this.TowerBox2_live.Name = "TowerBox2_live";
+            this.TowerBox2_live.Size = new System.Drawing.Size(83, 13);
+            this.TowerBox2_live.TabIndex = 14;
+            this.TowerBox2_live.Text = "Now Displaying:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 646);
+            this.Controls.Add(this.TowerBox2_live);
+            this.Controls.Add(this.TowerBox1_live);
             this.Controls.Add(this.SettingsDropDown);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.newTruck_textbox);
@@ -380,27 +402,29 @@
         private System.Windows.Forms.ToolStripMenuItem SerialCOMdropdown;
         private System.Windows.Forms.ToolStripMenuItem dsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearTrucksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM5ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM6ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM7ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM8ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cOM9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem display1_com1;
+        private System.Windows.Forms.ToolStripMenuItem display1_com2;
+        private System.Windows.Forms.ToolStripMenuItem display1_com3;
+        private System.Windows.Forms.ToolStripMenuItem display1_com4;
+        private System.Windows.Forms.ToolStripMenuItem display1_com5;
+        private System.Windows.Forms.ToolStripMenuItem display1_com6;
+        private System.Windows.Forms.ToolStripMenuItem display1_com7;
+        private System.Windows.Forms.ToolStripMenuItem display1_com8;
+        private System.Windows.Forms.ToolStripMenuItem display1_com9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem display2_com1;
+        private System.Windows.Forms.ToolStripMenuItem display2_com2;
+        private System.Windows.Forms.ToolStripMenuItem display2_com3;
+        private System.Windows.Forms.ToolStripMenuItem display2_com4;
+        private System.Windows.Forms.ToolStripMenuItem display2_com5;
+        private System.Windows.Forms.ToolStripMenuItem display2_com6;
+        private System.Windows.Forms.ToolStripMenuItem display2_com7;
+        private System.Windows.Forms.ToolStripMenuItem display2_com8;
+        private System.Windows.Forms.ToolStripMenuItem display2_com9;
         private System.IO.Ports.SerialPort serialPort1;
         private System.IO.Ports.SerialPort serialPort2;
+        private System.Windows.Forms.Label TowerBox1_live;
+        private System.Windows.Forms.Label TowerBox2_live;
     }
 }
 
