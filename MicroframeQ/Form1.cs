@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.ToolStripItem;
 
 namespace MicroframeQ
 {
@@ -644,5 +645,115 @@ namespace MicroframeQ
             return;
         }
 
+        private void COMcheck1(object sender, EventArgs e)
+        {
+            ClearChecks1();
+            if (!(sender is ToolStripMenuItem stripMenuItem)) return;
+            stripMenuItem.Checked = true;
+
+        }
+
+        private void Select_COM_Porttt(UInt16 COMswitch)
+        {
+            //send a string to WriteUserSettings. This rewrites the text file in the documents folder which stores the user's COM settings
+            WriteUserCOMSettings(COMswitch.ToString());
+
+            if (COMswitch < 20)
+            {
+                ClearChecks1();
+                if (serialPort1.IsOpen) serialPort1.Close();
+            }
+            else
+            {
+                ClearChecks2();
+                if (serialPort2.IsOpen) serialPort2.Close();
+            }
+
+            Console.WriteLine(COMswitch.ToString() + " is the selected port");
+
+            switch (COMswitch)
+            {
+                case 11:
+                    SetupSerial1("COM1");
+                    display1_com1.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 12:
+                    SetupSerial1("COM2");
+                    display1_com2.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 13:
+                    SetupSerial1("COM3");
+                    display1_com3.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 14:
+                    SetupSerial1("COM4");
+                    display1_com4.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 15:
+                    SetupSerial1("COM5");
+                    display1_com5.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 16:
+                    SetupSerial1("COM6");
+                    display1_com6.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 17:
+                    SetupSerial1("COM7");
+                    display1_com7.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 18:
+                    SetupSerial1("COM8");
+                    display1_com8.Checked = true;
+                    UpdateLiveQueue(1);
+                    break;
+                case 21:
+                    SetupSerial2("COM1");
+                    display2_com1.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 22:
+                    SetupSerial2("COM2");
+                    display2_com2.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 23:
+                    SetupSerial2("COM3");
+                    display2_com3.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 24:
+                    SetupSerial2("COM4");
+                    display2_com4.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 25:
+                    SetupSerial2("COM5");
+                    display2_com5.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 26:
+                    SetupSerial2("COM6");
+                    display2_com6.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 27:
+                    SetupSerial2("COM7");
+                    display2_com7.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+                case 28:
+                    SetupSerial2("COM8");
+                    display2_com8.Checked = true;
+                    UpdateLiveQueue(2);
+                    break;
+            }
+        }
     }
 }

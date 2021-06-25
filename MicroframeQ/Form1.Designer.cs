@@ -198,71 +198,80 @@
             this.display1_com8,
             this.display1_com9});
             this.dsToolStripMenuItem.Name = "dsToolStripMenuItem";
-            this.dsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.dsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dsToolStripMenuItem.Text = "Port 1";
             // 
             // display1_com1
             // 
             this.display1_com1.CheckOnClick = true;
             this.display1_com1.Name = "display1_com1";
-            this.display1_com1.Size = new System.Drawing.Size(111, 22);
+            this.display1_com1.Size = new System.Drawing.Size(180, 22);
             this.display1_com1.Text = "COM 1";
+            this.display1_com1.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com2
             // 
             this.display1_com2.CheckOnClick = true;
             this.display1_com2.Name = "display1_com2";
-            this.display1_com2.Size = new System.Drawing.Size(111, 22);
+            this.display1_com2.Size = new System.Drawing.Size(180, 22);
             this.display1_com2.Text = "COM 2";
+            this.display1_com2.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com3
             // 
             this.display1_com3.CheckOnClick = true;
             this.display1_com3.Name = "display1_com3";
-            this.display1_com3.Size = new System.Drawing.Size(111, 22);
+            this.display1_com3.Size = new System.Drawing.Size(180, 22);
             this.display1_com3.Text = "COM 3";
+            this.display1_com3.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com4
             // 
             this.display1_com4.CheckOnClick = true;
             this.display1_com4.Name = "display1_com4";
-            this.display1_com4.Size = new System.Drawing.Size(111, 22);
+            this.display1_com4.Size = new System.Drawing.Size(180, 22);
             this.display1_com4.Text = "COM 4";
+            this.display1_com4.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com5
             // 
             this.display1_com5.CheckOnClick = true;
             this.display1_com5.Name = "display1_com5";
-            this.display1_com5.Size = new System.Drawing.Size(111, 22);
+            this.display1_com5.Size = new System.Drawing.Size(180, 22);
             this.display1_com5.Text = "COM 5";
+            this.display1_com5.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com6
             // 
             this.display1_com6.CheckOnClick = true;
             this.display1_com6.Name = "display1_com6";
-            this.display1_com6.Size = new System.Drawing.Size(111, 22);
+            this.display1_com6.Size = new System.Drawing.Size(180, 22);
             this.display1_com6.Text = "COM 6";
+            this.display1_com6.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com7
             // 
             this.display1_com7.CheckOnClick = true;
             this.display1_com7.Name = "display1_com7";
-            this.display1_com7.Size = new System.Drawing.Size(111, 22);
+            this.display1_com7.Size = new System.Drawing.Size(180, 22);
             this.display1_com7.Text = "COM 7";
+            this.display1_com7.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com8
             // 
             this.display1_com8.CheckOnClick = true;
             this.display1_com8.Name = "display1_com8";
-            this.display1_com8.Size = new System.Drawing.Size(111, 22);
+            this.display1_com8.Size = new System.Drawing.Size(180, 22);
             this.display1_com8.Text = "COM 8";
+            this.display1_com8.Click += new System.EventHandler(this.COMcheck1);
             // 
             // display1_com9
             // 
             this.display1_com9.CheckOnClick = true;
             this.display1_com9.Name = "display1_com9";
-            this.display1_com9.Size = new System.Drawing.Size(111, 22);
+            this.display1_com9.Size = new System.Drawing.Size(180, 22);
             this.display1_com9.Text = "COM 9";
+            this.display1_com9.Click += new System.EventHandler(this.COMcheck1);
             // 
             // toolStripMenuItem1
             // 
@@ -277,7 +286,7 @@
             this.display2_com8,
             this.display2_com9});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Port 2";
             // 
             // display2_com1
