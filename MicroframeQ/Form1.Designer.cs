@@ -70,7 +70,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.removetruck_button = new System.Windows.Forms.Button();
             this.SettingsDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,6 +161,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Add Truck";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // SettingsDropDown
             // 
@@ -420,21 +421,22 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Truck Catalog";
             // 
-            // button2
+            // removetruck_button
             // 
-            this.button2.Location = new System.Drawing.Point(408, 501);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Remove Truck";
-            this.button2.UseVisualStyleBackColor = true;
+            this.removetruck_button.Location = new System.Drawing.Point(408, 501);
+            this.removetruck_button.Name = "removetruck_button";
+            this.removetruck_button.Size = new System.Drawing.Size(131, 23);
+            this.removetruck_button.TabIndex = 20;
+            this.removetruck_button.Text = "Remove Truck";
+            this.removetruck_button.UseVisualStyleBackColor = true;
+            this.removetruck_button.Click += new System.EventHandler(this.RemoveTruck);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 646);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.removetruck_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -502,7 +504,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button removetruck_button;
     }
 }
 

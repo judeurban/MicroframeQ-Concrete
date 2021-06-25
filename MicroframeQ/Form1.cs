@@ -394,7 +394,7 @@ namespace MicroframeQ
 
         private void NewTruck_textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            Console.WriteLine(e.ToString());
             if (e.KeyChar == (char)Keys.Return)                                                             //new entry on enter event
             {   
                 if (newTruck_textbox.Text == "")                                                            //blank statement. pop up warning for nothing there was annoying me.
@@ -675,6 +675,75 @@ namespace MicroframeQ
             //reset the box of interest to be white
             listbox.BackColor = Color.White;
 
+        }
+
+        private void RemoveTruck(object sender, EventArgs e)
+        {
+            if (truckListBox.Items.Count == 0)
+            {
+                return;
+            }
+            //if nothing is selected
+            if (truckListBox.SelectedItem == null)
+            {
+                MessageBox.Show("No item selected.");
+                return;
+            }
+            if (TempTruckList.Count == 0)
+            {
+                return;
+            }
+            //find selected item
+            //remove item from temptrucklist
+            //add item to tower1 listbox
+            //reset data source
+
+            int item_index;
+            string item_value;
+            //there's only one item, so we don't need to select a truck. Just remove the top item
+            if (truckListBox.Items.Count == 1)
+            {
+                item_index = 0;
+                item_value = (string)truckListBox.Items[0].ToString();
+            }
+            else
+            {
+                //define selected item to move
+                item_index = truckListBox.SelectedIndex;
+                item_value = truckListBox.SelectedItem.ToString();
+            }
+
+            //move from TempTruckList to Tower1List
+            GlobalTruckCatalog.Remove(int.Parse(item_value));
+            TempTruckList.RemoveAt(item_index);
+            TempTruckList.Sort();
+
+            UpdateTruckListBox();
+            UpdateLiveQueue(1);
+
+            if (truckListBox.Items.Count == 0)
+            {
+                return;
+            }
+            else if (item_index == truckListBox.Items.Count)
+            {
+                truckListBox.SelectedIndex = item_index - 1;
+            }
+            else if (truckListBox.Items.Count > 0)
+            {
+                truckListBox.SelectedIndex = item_index;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Console.WriteLine(e.GetType());
+            //PreviewKeyDown(Keys.Enter);
+            //NewTruck_textbox_KeyPress(newTruck_textbox, e.Equals(KeyPressEventArgs));
         }
     }
 }
