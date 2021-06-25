@@ -40,8 +40,9 @@ namespace MicroframeQ
             GlobalTruckCatalog.Clear();
 
             //Read User Setings
-            ReadUserSettings();
+            if (!Directory.Exists(SaveFolder)) CreateUserSetings(SaveFolder);                            //make sure the directory actually exists before we read it 
             TruckListBoxLoad();
+            COMSettingsLoad();
         }
 
         //      RECORD KEEPING      //
@@ -66,37 +67,82 @@ namespace MicroframeQ
                 TempTruckList.Add(i);
             }
         }
-        private void ReadUserSettings()
+
+        private void COMSettingsLoad()
         {
-            Console.WriteLine(SaveFolder);
-            if (!Directory.Exists(SaveFolder)) CreateUserSetings(SaveFolder);                            //make sure the directory actually exists before we read it 
+            string[] settings = File.ReadAllLines(UserSettingsPath);
+            UInt16 s = UInt16.Parse(settings[0]);
+            switch (s)
+            {
+                case 1:
+                    display1_com1.PerformClick();
+                    break;
+                case 2:
+                    display1_com2.PerformClick();
+                    break;
+                case 3:
+                    display1_com3.PerformClick();
+                    break;
+                case 4:
+                    display1_com4.PerformClick();
+                    break;
+                case 5:
+                    display1_com4.PerformClick();
+                    break;
+                case 6:
+                    display1_com4.PerformClick();
+                    break;
+                case 7:
+                    display1_com4.PerformClick();
+                    break;
+                case 8:
+                    display1_com4.PerformClick();
+                    break;
+                case 9:
+                    display1_com4.PerformClick();
+                    break;
+            }
+            s = UInt16.Parse(settings[1]);
+            switch (s)
+            {
+                case 1:
+                    display2_com1.PerformClick();
+                    break;
+                case 2:
+                    display2_com2.PerformClick();
+                    break;
+                case 3:
+                    display2_com3.PerformClick();
+                    break;
+                case 4:
+                    display2_com4.PerformClick();
+                    break;
+                case 5:
+                    display2_com4.PerformClick();
+                    break;
+                case 6:
+                    display2_com4.PerformClick();
+                    break;
+                case 7:
+                    display2_com4.PerformClick();
+                    break;
+                case 8:
+                    display2_com4.PerformClick();
+                    break;
+                case 9:
+                    display2_com4.PerformClick();
+                    break;
+            }
         }
 
         private void WriteUserSettings()
         {
             var myTruckFile = File.CreateText(TruckListPath);
             foreach (int i in GlobalTruckCatalog)
-            { 
+            {
                 myTruckFile.WriteLine(i);
             }
             myTruckFile.Close();
-        }
-
-        private static void WriteUserCOMSettings(string s)
-        {
-            //this function writes any updated serial COM settings
-            string[] oldfile = File.ReadAllLines(UserSettingsPath);
-
-            if (s[0].Equals('1'))
-            {
-                oldfile[0] = s[1].ToString();                                                       //display 1, so change row 1, leave row 2
-            }
-            else if (s[0].Equals('2'))
-            {
-                oldfile[1] = s[1].ToString();                                                       //display 2, so change row 2, leave row 1
-            }
-            else return;
-            File.WriteAllText(UserSettingsPath, oldfile[0] + "\n" + oldfile[1]);
         }
 
         private void UpdateTruckListBox()
@@ -544,101 +590,42 @@ namespace MicroframeQ
 
         private void COMcheck1(object sender, EventArgs e)
         {
-            if (serialPort1.IsOpen) serialPort1.Close();
             ClearChecks1();
+            if (serialPort1.IsOpen) serialPort1.Close();
             if (!(sender is ToolStripMenuItem stripMenuItem)) return;
             stripMenuItem.Checked = true;
 
-            //Select_COM_Port(UInt16.Parse("1" + sender.ToString()[4]));
-            Console.WriteLine(sender.ToString());
             SetupSerial1(sender.ToString());
             UpdateLiveQueue(1);
+            WriteCOMSettings(1, sender.ToString()[3]);
         }
 
         private void COMcheck2(object sender, EventArgs e)
         {
-            if (serialPort2.IsOpen) serialPort2.Close();
             ClearChecks2();
+            if (serialPort2.IsOpen) serialPort2.Close();
             if (!(sender is ToolStripMenuItem stripMenuItem)) return;
             stripMenuItem.Checked = true;
-            Select_COM_Port(UInt16.Parse("2" + sender.ToString()[4]));
 
+            SetupSerial2(sender.ToString());
+            UpdateLiveQueue(2);
+            WriteCOMSettings(2, sender.ToString()[3]);
         }
-
-        private void Select_COM_Port(UInt16 COMswitch)
+        
+        private void WriteCOMSettings(UInt16 s, char c)
         {
-            //send a string to WriteUserSettings. This rewrites the text file in the documents folder which stores the user's COM settings
-            WriteUserCOMSettings(COMswitch.ToString());
+            string[] oldfile = File.ReadAllLines(UserSettingsPath);
 
-            switch (COMswitch)
+            switch (s)
             {
-                case 11:
-                    SetupSerial1("COM1");
-                    UpdateLiveQueue(1);
-                    break;
-                case 12:
-                    SetupSerial1("COM2");
-                    UpdateLiveQueue(1);
-                    break;
-                case 13:
-                    SetupSerial1("COM3");
-                    UpdateLiveQueue(1);
-                    break;
-                case 14:
-                    SetupSerial1("COM4");
-                    UpdateLiveQueue(1);
-                    break;
-                case 15:
-                    SetupSerial1("COM5");
-                    UpdateLiveQueue(1);
-                    break;
-                case 16:
-                    SetupSerial1("COM6");
-                    UpdateLiveQueue(1);
-                    break;
-                case 17:
-                    SetupSerial1("COM7");
-                    UpdateLiveQueue(1);
-                    break;
-                case 18:
-                    SetupSerial1("COM8");
-                    UpdateLiveQueue(1);
-                    break;
-                case 21:
-                    SetupSerial2("COM1");
-                    UpdateLiveQueue(2);
-                    break;
-                case 22:
-                    SetupSerial2("COM2");
-                    UpdateLiveQueue(2);
-                    break;
-                case 23:
-                    SetupSerial2("COM3");
-                    UpdateLiveQueue(2);
-                    break;
-                case 24:
-                    SetupSerial2("COM4");
-                    UpdateLiveQueue(2);
-                    break;
-                case 25:
-                    SetupSerial2("COM5");
-                    UpdateLiveQueue(2);
-                    break;
-                case 26:
-                    SetupSerial2("COM6");
-                    UpdateLiveQueue(2);
-                    break;
-                case 27:
-                    SetupSerial2("COM7");
-                    display2_com7.Checked = true;
-                    UpdateLiveQueue(2);
-                    break;
-                case 28:
-                    SetupSerial2("COM8");
-                    display2_com8.Checked = true;
-                    UpdateLiveQueue(2);
+                case 1:                                     //update display 1
+                    oldfile[0] = c.ToString();
+                break;
+                case 2:                                     //update display 1
+                    oldfile[1] = c.ToString();
                     break;
             }
+            File.WriteAllText(UserSettingsPath, oldfile[0] + "\n" + oldfile[1]);
         }
     }
 }
