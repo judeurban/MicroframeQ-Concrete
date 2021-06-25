@@ -17,9 +17,6 @@ namespace MicroframeQ
         public static List<int> Tower1List = new List<int> { };
         public static List<int> Tower2List = new List<int> { };
         public static List<int> TempTruckList = new List<int> { };
-        BindingSource Tower1BS = new BindingSource();
-        BindingSource Tower2BS = new BindingSource();
-        BindingSource TempTruckListBS = new BindingSource();
 
         public static string SaveFolder;
         public static string UserSettingsPath;
@@ -27,9 +24,6 @@ namespace MicroframeQ
         public Form1()
         {
             InitializeComponent();
-            Tower1BS.DataSource = Tower1List;
-            Tower2BS.DataSource = Tower2List;
-            TempTruckListBS.DataSource = TempTruckList;
 
             try
             {
@@ -83,6 +77,25 @@ namespace MicroframeQ
             foreach(int i in TempTruckList)
             {
                 truckListBox.Items.Add(i.ToString());
+            }
+        }
+
+        private void UpdateTower1ListBox()
+        {
+            towerBox1.DataSource = null;
+            if (towerBox1.Items.Count != 0) towerBox1.Items.Clear();
+            foreach (int i in Tower1List)
+            {
+                towerBox1.Items.Add(i.ToString());
+            }
+        }
+        private void UpdateTower2ListBox()
+        {
+            towerBox2.DataSource = null;
+            if (towerBox2.Items.Count != 0) towerBox2.Items.Clear();
+            foreach (int i in Tower2List)
+            {
+                towerBox2.Items.Add(i.ToString());
             }
         }
 
@@ -150,15 +163,12 @@ namespace MicroframeQ
             }
 
             //move from TempTruckList to Tower1List
-            TempTruckListBS.RemoveAt(item_index);
+            TempTruckList.RemoveAt(item_index);
             TempTruckList.Sort();
-            truckListBox.DataSource = TempTruckListBS;
+            Tower1List.Add(int.Parse(item_value));
 
-            Tower1BS.Add(Int32.Parse(item_value));
-            towerBox1.DataSource = Tower1BS;
-            //truckListBox.DataSource = TempTruckList;
-            //towerBox1.DataSource = Tower1List;
-
+            UpdateTruckListBox();
+            UpdateTower1ListBox();
         }
 
         private void MoveTower2_Click_1(object sender, EventArgs e)
@@ -198,13 +208,12 @@ namespace MicroframeQ
             }
 
             //move from TempTruckList to Tower1List
-            TempTruckListBS.RemoveAt(item_index);
+            TempTruckList.RemoveAt(item_index);
             TempTruckList.Sort();
-            truckListBox.DataSource = TempTruckListBS;
+            Tower2List.Add(int.Parse(item_value));
 
-            Tower2BS.Add(Int32.Parse(item_value));
-            towerBox2.DataSource = Tower2BS;
-
+            UpdateTruckListBox();
+            UpdateTower2ListBox();
         }
 
         private void TruckListBox_KeyDown(object sender, KeyEventArgs e)
@@ -230,31 +239,30 @@ namespace MicroframeQ
 
         private void NextButton1_Click(object sender, EventArgs e)
         {
-            if(Tower1BS.Count == 0) return;
+            if(Tower1List.Count == 0) return;
 
             //move from Tower1List to TempTruckList  
-            TempTruckListBS.Add(towerBox1.Items[0]);
+            TempTruckList.Add(int.Parse(towerBox1.Items[0].ToString()));
             TempTruckList.Sort();
-            Tower1BS.RemoveAt(0);
+            Tower1List.RemoveAt(0);
 
             //update boxes
-            truckListBox.DataSource = TempTruckListBS;
-            towerBox1.DataSource = Tower1BS;
+            UpdateTower1ListBox();
+            UpdateTruckListBox();
         }
 
         private void NextButton2_Click(object sender, EventArgs e)
         {
-            if (Tower2BS.Count == 0) return;
+            if (Tower2List.Count == 0) return;
 
             //move from Tower1List to TempTruckList  
-            TempTruckListBS.Add(towerBox2.Items[0]);
+            TempTruckList.Add(int.Parse(towerBox2.Items[0].ToString()));
             TempTruckList.Sort();
-                        
-            Tower2BS.RemoveAt(0);
+            Tower2List.RemoveAt(0);
 
             //update boxes
-            truckListBox.DataSource = TempTruckList;
-            towerBox1.DataSource = Tower1BS;
+            UpdateTower2ListBox();
+            UpdateTruckListBox();
         }
 
         private void TowerBox1_KeyDown(object sender, KeyEventArgs e)
