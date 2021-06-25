@@ -87,19 +87,19 @@ namespace MicroframeQ
                     display1_com4.PerformClick();
                     break;
                 case 5:
-                    display1_com4.PerformClick();
+                    display1_com5.PerformClick();
                     break;
                 case 6:
-                    display1_com4.PerformClick();
+                    display1_com6.PerformClick();
                     break;
                 case 7:
-                    display1_com4.PerformClick();
+                    display1_com7.PerformClick();
                     break;
                 case 8:
-                    display1_com4.PerformClick();
+                    display1_com8.PerformClick();
                     break;
                 case 9:
-                    display1_com4.PerformClick();
+                    display1_com9.PerformClick();
                     break;
             }
             s = UInt16.Parse(settings[1]);
@@ -118,19 +118,19 @@ namespace MicroframeQ
                     display2_com4.PerformClick();
                     break;
                 case 5:
-                    display2_com4.PerformClick();
+                    display2_com5.PerformClick();
                     break;
                 case 6:
-                    display2_com4.PerformClick();
+                    display2_com6.PerformClick();
                     break;
                 case 7:
-                    display2_com4.PerformClick();
+                    display2_com7.PerformClick();
                     break;
                 case 8:
-                    display2_com4.PerformClick();
+                    display2_com8.PerformClick();
                     break;
                 case 9:
-                    display2_com4.PerformClick();
+                    display2_com9.PerformClick();
                     break;
             }
         }
