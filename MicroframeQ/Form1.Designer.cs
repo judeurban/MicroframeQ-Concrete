@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.truckListBox = new System.Windows.Forms.ListBox();
             this.towerBox1 = new System.Windows.Forms.ListBox();
             this.towerBox2 = new System.Windows.Forms.ListBox();
@@ -35,9 +36,14 @@
             this.moveTower2 = new System.Windows.Forms.Button();
             this.NextButton2 = new System.Windows.Forms.Button();
             this.NextButton1 = new System.Windows.Forms.Button();
-            this.clearTrucksButton = new System.Windows.Forms.LinkLabel();
             this.newTruck_textbox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.SettingsDropDown = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.dfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearTrucksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingsDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
             // truckListBox
@@ -107,17 +113,6 @@
             this.NextButton1.UseVisualStyleBackColor = true;
             this.NextButton1.Click += new System.EventHandler(this.NextButton1_Click);
             // 
-            // clearTrucksButton
-            // 
-            this.clearTrucksButton.AutoSize = true;
-            this.clearTrucksButton.Location = new System.Drawing.Point(209, 44);
-            this.clearTrucksButton.Name = "clearTrucksButton";
-            this.clearTrucksButton.Size = new System.Drawing.Size(67, 13);
-            this.clearTrucksButton.TabIndex = 7;
-            this.clearTrucksButton.TabStop = true;
-            this.clearTrucksButton.Text = "Clear Trucks";
-            this.clearTrucksButton.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
-            // 
             // newTruck_textbox
             // 
             this.newTruck_textbox.Location = new System.Drawing.Point(401, 423);
@@ -135,14 +130,57 @@
             this.button1.Text = "Add Truck";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // SettingsDropDown
+            // 
+            this.SettingsDropDown.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.SettingsDropDown.Location = new System.Drawing.Point(0, 0);
+            this.SettingsDropDown.Name = "SettingsDropDown";
+            this.SettingsDropDown.Size = new System.Drawing.Size(1008, 25);
+            this.SettingsDropDown.TabIndex = 12;
+            this.SettingsDropDown.Text = "Settings";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dfToolStripMenuItem,
+            this.clearTrucksToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton1.Text = "Settings";
+            // 
+            // dfToolStripMenuItem
+            // 
+            this.dfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsToolStripMenuItem});
+            this.dfToolStripMenuItem.Name = "dfToolStripMenuItem";
+            this.dfToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.dfToolStripMenuItem.Text = "df";
+            // 
+            // dsToolStripMenuItem
+            // 
+            this.dsToolStripMenuItem.Name = "dsToolStripMenuItem";
+            this.dsToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.dsToolStripMenuItem.Text = "ds";
+            // 
+            // clearTrucksToolStripMenuItem
+            // 
+            this.clearTrucksToolStripMenuItem.Name = "clearTrucksToolStripMenuItem";
+            this.clearTrucksToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.clearTrucksToolStripMenuItem.Text = "Clear Trucks...";
+            this.clearTrucksToolStripMenuItem.Click += new System.EventHandler(this.ClearTrucksToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 551);
+            this.ClientSize = new System.Drawing.Size(1008, 646);
+            this.Controls.Add(this.SettingsDropDown);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.newTruck_textbox);
-            this.Controls.Add(this.clearTrucksButton);
             this.Controls.Add(this.NextButton1);
             this.Controls.Add(this.NextButton2);
             this.Controls.Add(this.moveTower2);
@@ -152,6 +190,8 @@
             this.Controls.Add(this.truckListBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.SettingsDropDown.ResumeLayout(false);
+            this.SettingsDropDown.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,9 +206,13 @@
         private System.Windows.Forms.Button moveTower2;
         private System.Windows.Forms.Button NextButton2;
         private System.Windows.Forms.Button NextButton1;
-        private System.Windows.Forms.LinkLabel clearTrucksButton;
         private System.Windows.Forms.TextBox newTruck_textbox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStrip SettingsDropDown;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem dfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearTrucksToolStripMenuItem;
     }
 }
 

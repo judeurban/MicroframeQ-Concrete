@@ -72,7 +72,11 @@ namespace MicroframeQ
         private void UpdateTruckListBox()
         {
             truckListBox.DataSource = null;
-            if (TempTruckList.Count == 0) return;
+            if (TempTruckList.Count == 0)
+            {
+                truckListBox.Items.Clear();
+                return;
+            }
             if(truckListBox.Items.Count != 0)  truckListBox.Items.Clear();
             foreach(int i in TempTruckList)
             {
@@ -274,21 +278,6 @@ namespace MicroframeQ
             }
         }
 
-        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove all\nitems from the list?", "Remove All Items", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                GlobalTruckCatalog.Clear();
-                var myTruckFile = File.CreateText(TruckListPath);                       //rewrite the .txt file
-                myTruckFile.Close();
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                return;
-            }
-        }
-
         private void NewTruck_textbox_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -329,6 +318,28 @@ namespace MicroframeQ
                 }
             }
             else
+            {
+                return;
+            }
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClearTrucksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove all\nitems from the list?", "Remove All Items", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                GlobalTruckCatalog.Clear();
+                TempTruckList.Clear();
+                UpdateTruckListBox();
+                var myTruckFile = File.CreateText(TruckListPath);                       //rewrite the .txt file
+                myTruckFile.Close();
+            }
+            else if (dialogResult == DialogResult.No)
             {
                 return;
             }
