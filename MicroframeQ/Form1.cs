@@ -250,6 +250,23 @@ namespace MicroframeQ
             UpdateTruckListBox();
             UpdateTower1ListBox();
             UpdateLiveQueue(1);
+
+            if (truckListBox.Items.Count == 0)
+            {
+                return;
+            }
+            else if (item_index == truckListBox.Items.Count)
+            {
+                truckListBox.SelectedIndex = item_index - 1;
+            }
+            else if (truckListBox.Items.Count > 0)
+            {
+                truckListBox.SelectedIndex = item_index;
+            } 
+            else
+            {
+                return;
+            }
         }
 
         private void MoveTower2_Click_1(object sender, EventArgs e)
@@ -296,6 +313,23 @@ namespace MicroframeQ
             UpdateTruckListBox();
             UpdateTower2ListBox();
             UpdateLiveQueue(2);
+
+            if (truckListBox.Items.Count == 0)
+            {
+                return;
+            }
+            else if (item_index == truckListBox.Items.Count)
+            {
+                truckListBox.SelectedIndex = item_index - 1;
+            }
+            else if (truckListBox.Items.Count > 0)
+            {
+                truckListBox.SelectedIndex = item_index;
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void TruckListBox_KeyDown(object sender, KeyEventArgs e)

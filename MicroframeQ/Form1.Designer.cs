@@ -67,6 +67,10 @@
             this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.TowerBox1_live = new System.Windows.Forms.Label();
             this.TowerBox2_live = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SettingsDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +78,7 @@
             // 
             this.truckListBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.truckListBox.FormattingEnabled = true;
-            this.truckListBox.Location = new System.Drawing.Point(387, 126);
+            this.truckListBox.Location = new System.Drawing.Point(408, 166);
             this.truckListBox.Name = "truckListBox";
             this.truckListBox.Size = new System.Drawing.Size(131, 277);
             this.truckListBox.TabIndex = 0;
@@ -84,7 +88,7 @@
             // towerBox1
             // 
             this.towerBox1.FormattingEnabled = true;
-            this.towerBox1.Location = new System.Drawing.Point(74, 126);
+            this.towerBox1.Location = new System.Drawing.Point(74, 166);
             this.towerBox1.Name = "towerBox1";
             this.towerBox1.Size = new System.Drawing.Size(131, 277);
             this.towerBox1.TabIndex = 1;
@@ -94,7 +98,7 @@
             // towerBox2
             // 
             this.towerBox2.FormattingEnabled = true;
-            this.towerBox2.Location = new System.Drawing.Point(709, 126);
+            this.towerBox2.Location = new System.Drawing.Point(758, 166);
             this.towerBox2.Name = "towerBox2";
             this.towerBox2.Size = new System.Drawing.Size(131, 277);
             this.towerBox2.TabIndex = 2;
@@ -103,7 +107,7 @@
             // 
             // moveTower1
             // 
-            this.moveTower1.Location = new System.Drawing.Point(258, 251);
+            this.moveTower1.Location = new System.Drawing.Point(258, 315);
             this.moveTower1.Name = "moveTower1";
             this.moveTower1.Size = new System.Drawing.Size(75, 23);
             this.moveTower1.TabIndex = 3;
@@ -113,7 +117,7 @@
             // 
             // moveTower2
             // 
-            this.moveTower2.Location = new System.Drawing.Point(583, 251);
+            this.moveTower2.Location = new System.Drawing.Point(615, 315);
             this.moveTower2.Name = "moveTower2";
             this.moveTower2.Size = new System.Drawing.Size(75, 23);
             this.moveTower2.TabIndex = 4;
@@ -123,7 +127,7 @@
             // 
             // NextButton2
             // 
-            this.NextButton2.Location = new System.Drawing.Point(709, 423);
+            this.NextButton2.Location = new System.Drawing.Point(758, 477);
             this.NextButton2.Name = "NextButton2";
             this.NextButton2.Size = new System.Drawing.Size(131, 23);
             this.NextButton2.TabIndex = 5;
@@ -133,7 +137,7 @@
             // 
             // NextButton1
             // 
-            this.NextButton1.Location = new System.Drawing.Point(74, 423);
+            this.NextButton1.Location = new System.Drawing.Point(74, 477);
             this.NextButton1.Name = "NextButton1";
             this.NextButton1.Size = new System.Drawing.Size(131, 23);
             this.NextButton1.TabIndex = 6;
@@ -143,17 +147,17 @@
             // 
             // newTruck_textbox
             // 
-            this.newTruck_textbox.Location = new System.Drawing.Point(401, 423);
+            this.newTruck_textbox.Location = new System.Drawing.Point(408, 449);
             this.newTruck_textbox.Name = "newTruck_textbox";
-            this.newTruck_textbox.Size = new System.Drawing.Size(100, 20);
+            this.newTruck_textbox.Size = new System.Drawing.Size(131, 20);
             this.newTruck_textbox.TabIndex = 8;
             this.newTruck_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewTruck_textbox_KeyPress);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(401, 449);
+            this.button1.Location = new System.Drawing.Point(408, 475);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(131, 23);
             this.button1.TabIndex = 9;
             this.button1.Text = "Add Truck";
             this.button1.UseVisualStyleBackColor = true;
@@ -371,21 +375,69 @@
             this.TowerBox1_live.Size = new System.Drawing.Size(83, 13);
             this.TowerBox1_live.TabIndex = 13;
             this.TowerBox1_live.Text = "Now Displaying:";
+            this.TowerBox1_live.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // TowerBox2_live
             // 
             this.TowerBox2_live.AutoSize = true;
-            this.TowerBox2_live.Location = new System.Drawing.Point(575, 179);
+            this.TowerBox2_live.Location = new System.Drawing.Point(612, 179);
             this.TowerBox2_live.Name = "TowerBox2_live";
             this.TowerBox2_live.Size = new System.Drawing.Size(83, 13);
             this.TowerBox2_live.TabIndex = 14;
             this.TowerBox2_live.Text = "Now Displaying:";
+            this.TowerBox2_live.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(95, 124);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 22);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Tower 1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(782, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 22);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Tower 2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(404, 124);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 22);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Truck Catalog";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(408, 501);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Remove Truck";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 646);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.TowerBox2_live);
             this.Controls.Add(this.TowerBox1_live);
             this.Controls.Add(this.SettingsDropDown);
@@ -399,7 +451,7 @@
             this.Controls.Add(this.towerBox1);
             this.Controls.Add(this.truckListBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MicroframeQ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.SettingsDropDown.ResumeLayout(false);
             this.SettingsDropDown.PerformLayout();
@@ -447,6 +499,10 @@
         private System.IO.Ports.SerialPort serialPort2;
         private System.Windows.Forms.Label TowerBox1_live;
         private System.Windows.Forms.Label TowerBox2_live;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
     }
 }
 
