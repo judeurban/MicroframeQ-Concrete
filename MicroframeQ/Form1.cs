@@ -42,6 +42,8 @@ namespace MicroframeQ
             ReadUserSettings();
             TruckListBoxLoad();
         }
+
+        //      RECORD KEEPING      //
         private void TruckListBoxLoad()
         {
             //add all items of .txt file to catalog
@@ -69,6 +71,15 @@ namespace MicroframeQ
             if (!Directory.Exists(SaveFolder)) CreateUserSetings(SaveFolder);                            //make sure the directory actually exists before we read it 
         }
 
+        private void WriteUserSettings()
+        {
+            var myTruckFile = File.CreateText(TruckListPath);
+            foreach (int i in GlobalTruckCatalog)
+            { 
+                myTruckFile.WriteLine(i);
+            }
+            myTruckFile.Close();
+        }
         private void UpdateTruckListBox()
         {
             truckListBox.DataSource = null;
@@ -344,5 +355,77 @@ namespace MicroframeQ
                 return;
             }
         }
+
+        //      SERIAL COMMUNICATION        //
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (serialPort1.IsOpen) SendBlank1(); serialPort1.Close();                                      //close any open serial ports
+            if (serialPort2.IsOpen) SendBlank2(); serialPort2.Close();
+
+            //update the text file
+            WriteUserSettings();
+        }
+
+        private void SetupSerial1(String portname)
+        {
+            if (serialPort1.IsOpen) serialPort1.Close();
+
+            serialPort1.PortName = portname;
+
+            try
+            {
+                serialPort1.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        private void SendBlank1()
+        {
+            //open communication, and return just in case it's not open yet.
+            Disp1_OpenCommunication();
+            if (!serialPort1.IsOpen) serialPort1.Open();
+
+            //send message
+            serialPort1.Write(Environment.NewLine);
+        }
+        private void SendBlank2()
+        {
+            //open communication, and return just in case it's not open yet.
+            Disp2_OpenCommunication();
+            if (!serialPort2.IsOpen) serialPort2.Open();
+
+            //send message
+            serialPort2.Write(Environment.NewLine);
+        }
+        private void Disp1_OpenCommunication()
+        {
+            try
+            {
+                if (!serialPort1.IsOpen) serialPort1.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void Disp2_OpenCommunication()
+        {
+            try
+            {
+                if (!serialPort2.IsOpen) serialPort2.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+
+
+
     }
 }

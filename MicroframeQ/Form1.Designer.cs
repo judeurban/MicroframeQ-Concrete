@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.truckListBox = new System.Windows.Forms.ListBox();
             this.towerBox1 = new System.Windows.Forms.ListBox();
@@ -40,9 +41,30 @@
             this.button1 = new System.Windows.Forms.Button();
             this.SettingsDropDown = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.dfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SerialCOMdropdown = new System.Windows.Forms.ToolStripMenuItem();
             this.dsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOM9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.clearTrucksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.serialPort2 = new System.IO.Ports.SerialPort(this.components);
             this.SettingsDropDown.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,7 +166,7 @@
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dfToolStripMenuItem,
+            this.SerialCOMdropdown,
             this.clearTrucksToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -152,24 +174,168 @@
             this.toolStripDropDownButton1.Size = new System.Drawing.Size(62, 22);
             this.toolStripDropDownButton1.Text = "Settings";
             // 
-            // dfToolStripMenuItem
+            // SerialCOMdropdown
             // 
-            this.dfToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dsToolStripMenuItem});
-            this.dfToolStripMenuItem.Name = "dfToolStripMenuItem";
-            this.dfToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.dfToolStripMenuItem.Text = "df";
+            this.SerialCOMdropdown.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.SerialCOMdropdown.Name = "SerialCOMdropdown";
+            this.SerialCOMdropdown.Size = new System.Drawing.Size(204, 22);
+            this.SerialCOMdropdown.Text = "Serial Port Configuration";
             // 
             // dsToolStripMenuItem
             // 
+            this.dsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cOM1ToolStripMenuItem,
+            this.cOM2ToolStripMenuItem,
+            this.cOM3ToolStripMenuItem,
+            this.cOM4ToolStripMenuItem,
+            this.cOM5ToolStripMenuItem,
+            this.cOM6ToolStripMenuItem,
+            this.cOM7ToolStripMenuItem,
+            this.cOM8ToolStripMenuItem,
+            this.cOM9ToolStripMenuItem});
             this.dsToolStripMenuItem.Name = "dsToolStripMenuItem";
-            this.dsToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
-            this.dsToolStripMenuItem.Text = "ds";
+            this.dsToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.dsToolStripMenuItem.Text = "Port 1";
+            // 
+            // cOM1ToolStripMenuItem
+            // 
+            this.cOM1ToolStripMenuItem.CheckOnClick = true;
+            this.cOM1ToolStripMenuItem.Name = "cOM1ToolStripMenuItem";
+            this.cOM1ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM1ToolStripMenuItem.Text = "COM 1";
+            // 
+            // cOM2ToolStripMenuItem
+            // 
+            this.cOM2ToolStripMenuItem.CheckOnClick = true;
+            this.cOM2ToolStripMenuItem.Name = "cOM2ToolStripMenuItem";
+            this.cOM2ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM2ToolStripMenuItem.Text = "COM 2";
+            // 
+            // cOM3ToolStripMenuItem
+            // 
+            this.cOM3ToolStripMenuItem.CheckOnClick = true;
+            this.cOM3ToolStripMenuItem.Name = "cOM3ToolStripMenuItem";
+            this.cOM3ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM3ToolStripMenuItem.Text = "COM 3";
+            // 
+            // cOM4ToolStripMenuItem
+            // 
+            this.cOM4ToolStripMenuItem.CheckOnClick = true;
+            this.cOM4ToolStripMenuItem.Name = "cOM4ToolStripMenuItem";
+            this.cOM4ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM4ToolStripMenuItem.Text = "COM 4";
+            // 
+            // cOM5ToolStripMenuItem
+            // 
+            this.cOM5ToolStripMenuItem.CheckOnClick = true;
+            this.cOM5ToolStripMenuItem.Name = "cOM5ToolStripMenuItem";
+            this.cOM5ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM5ToolStripMenuItem.Text = "COM 5";
+            // 
+            // cOM6ToolStripMenuItem
+            // 
+            this.cOM6ToolStripMenuItem.CheckOnClick = true;
+            this.cOM6ToolStripMenuItem.Name = "cOM6ToolStripMenuItem";
+            this.cOM6ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM6ToolStripMenuItem.Text = "COM 6";
+            // 
+            // cOM7ToolStripMenuItem
+            // 
+            this.cOM7ToolStripMenuItem.CheckOnClick = true;
+            this.cOM7ToolStripMenuItem.Name = "cOM7ToolStripMenuItem";
+            this.cOM7ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM7ToolStripMenuItem.Text = "COM 7";
+            // 
+            // cOM8ToolStripMenuItem
+            // 
+            this.cOM8ToolStripMenuItem.CheckOnClick = true;
+            this.cOM8ToolStripMenuItem.Name = "cOM8ToolStripMenuItem";
+            this.cOM8ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM8ToolStripMenuItem.Text = "COM 8";
+            // 
+            // cOM9ToolStripMenuItem
+            // 
+            this.cOM9ToolStripMenuItem.CheckOnClick = true;
+            this.cOM9ToolStripMenuItem.Name = "cOM9ToolStripMenuItem";
+            this.cOM9ToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.cOM9ToolStripMenuItem.Text = "COM 9";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem9,
+            this.toolStripMenuItem10});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem1.Text = "Port 2";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem2.Text = "COM 1";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem3.Text = "COM 2";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem4.Text = "COM 3";
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem5.Text = "COM 4";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem6.Text = "COM 5";
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem7.Text = "COM 6";
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem8.Text = "COM 7";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem9.Text = "COM 8";
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(111, 22);
+            this.toolStripMenuItem10.Text = "COM 9";
             // 
             // clearTrucksToolStripMenuItem
             // 
             this.clearTrucksToolStripMenuItem.Name = "clearTrucksToolStripMenuItem";
-            this.clearTrucksToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.clearTrucksToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.clearTrucksToolStripMenuItem.Text = "Clear Trucks...";
             this.clearTrucksToolStripMenuItem.Click += new System.EventHandler(this.ClearTrucksToolStripMenuItem_Click);
             // 
@@ -190,6 +356,7 @@
             this.Controls.Add(this.truckListBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.SettingsDropDown.ResumeLayout(false);
             this.SettingsDropDown.PerformLayout();
             this.ResumeLayout(false);
@@ -210,9 +377,30 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip SettingsDropDown;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem dfToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SerialCOMdropdown;
         private System.Windows.Forms.ToolStripMenuItem dsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clearTrucksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cOM9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.IO.Ports.SerialPort serialPort2;
     }
 }
 
