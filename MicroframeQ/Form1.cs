@@ -75,6 +75,17 @@ namespace MicroframeQ
             if (!Directory.Exists(SaveFolder)) CreateUserSetings(SaveFolder);                            //make sure the directory actually exists before we read it 
         }
 
+        private void UpdateTruckListBox()
+        {
+            truckListBox.DataSource = null;
+            if (TempTruckList.Count == 0) return;
+            if(truckListBox.Items.Count != 0)  truckListBox.Items.Clear();
+            foreach(int i in TempTruckList)
+            {
+                truckListBox.Items.Add(i.ToString());
+            }
+        }
+
         private void CreateUserSetings(string SaveFolder)
         {
             //Try to create the directory at SaveFolder
@@ -251,6 +262,66 @@ namespace MicroframeQ
             if (e.KeyValue == (char)Keys.Enter)
             {
                 NextButton1_Click(sender, e);
+                return;
+            }
+        }
+
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove all\nitems from the list?", "Remove All Items", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                GlobalTruckCatalog.Clear();
+                var myTruckFile = File.CreateText(TruckListPath);                       //rewrite the .txt file
+                myTruckFile.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void NewTruck_textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (e.KeyChar == (char)Keys.Return)                                                             //new entry on enter event
+            {   
+                if (newTruck_textbox.Text == "")                                                            //blank statement. pop up warning for nothing there was annoying me.
+                {
+                    return;
+                }
+                else if (int.TryParse(newTruck_textbox.Text, out int value))                                //item is a valid integer
+                {
+                    if (GlobalTruckCatalog.Contains(int.Parse(newTruck_textbox.Text)))                       //catch a valid integer that is in the trucklist_temp
+                    {
+                        MessageBox.Show("Item already added.");
+                        return;
+                    }
+                    else if (TempTruckList.Contains(int.Parse(newTruck_textbox.Text)))                //catch a valid integer that is in the catalog. no duplicates!
+                    {
+                        MessageBox.Show("That item is already in the truck list.");
+                        return;
+                    }
+                    else
+                    {
+                        GlobalTruckCatalog.Add(int.Parse(newTruck_textbox.Text));                            //the item passed the test. add it to global catalog
+                        TempTruckList.Add(int.Parse(newTruck_textbox.Text));                                //add to the temp list
+                        newTruck_textbox.Clear();
+
+                        GlobalTruckCatalog.Sort();
+                        TempTruckList.Sort();
+
+                        UpdateTruckListBox();
+                        return;
+                    }
+                }
+                else
+                {                                                                               //catch any special symbols. I don't want a " & " crashing my precious program.
+                    MessageBox.Show("Please enter a number");
+                }
+            }
+            else
+            {
                 return;
             }
         }
