@@ -627,5 +627,20 @@ namespace MicroframeQ
             }
             File.WriteAllText(UserSettingsPath, oldfile[0] + "\n" + oldfile[1]);
         }
+
+        private void BackgroundFocusColorChange(object sender, EventArgs e)
+        {
+            if (!(sender is ListBox listbox)) return;
+
+            //gray uninteresting boxes
+            foreach (var box in Controls.OfType<ListBox>())
+            {
+                box.BackColor = Color.LightGray;
+            }
+
+            //reset the box of interest to be white
+            listbox.BackColor = Color.White;
+
+        }
     }
 }
