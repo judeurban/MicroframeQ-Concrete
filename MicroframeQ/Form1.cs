@@ -212,7 +212,7 @@ namespace MicroframeQ
         {
             if (e.KeyValue == (char)Keys.Enter)
             {
-                //.PerformClick();
+                NextButton2_Click(sender, e);
                 return;
             }
         }
@@ -223,6 +223,7 @@ namespace MicroframeQ
 
             //move from Tower1List to TempTruckList  
             TempTruckListBS.Add(towerBox1.Items[0]);
+            TempTruckList.Sort();
             Tower1BS.RemoveAt(0);
 
             //update boxes
@@ -236,11 +237,22 @@ namespace MicroframeQ
 
             //move from Tower1List to TempTruckList  
             TempTruckListBS.Add(towerBox2.Items[0]);
+            TempTruckList.Sort();
+                        
             Tower2BS.RemoveAt(0);
 
             //update boxes
-            truckListBox.DataSource = TempTruckListBS;
+            truckListBox.DataSource = TempTruckList;
             towerBox1.DataSource = Tower1BS;
+        }
+
+        private void TowerBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.Enter)
+            {
+                NextButton1_Click(sender, e);
+                return;
+            }
         }
     }
 }

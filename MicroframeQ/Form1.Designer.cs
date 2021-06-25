@@ -53,6 +53,7 @@
             this.towerBox1.Name = "towerBox1";
             this.towerBox1.Size = new System.Drawing.Size(131, 277);
             this.towerBox1.TabIndex = 1;
+            this.towerBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TowerBox1_KeyDown);
             // 
             // towerBox2
             // 
