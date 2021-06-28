@@ -396,40 +396,8 @@ namespace MicroframeQ
         {
             Console.WriteLine(e.ToString());
             if (e.KeyChar == (char)Keys.Return)                                                             //new entry on enter event
-            {   
-                if (newTruck_textbox.Text == "")                                                            //blank statement. pop up warning for nothing there was annoying me.
-                {
-                    return;
-                }
-                else if (int.TryParse(newTruck_textbox.Text, out int value))                                //item is a valid integer
-                {
-                    if (GlobalTruckCatalog.Contains(int.Parse(newTruck_textbox.Text)))                       //catch a valid integer that is in the trucklist_temp
-                    {
-                        MessageBox.Show("Item already added.");
-                        return;
-                    }
-                    else if (TempTruckList.Contains(int.Parse(newTruck_textbox.Text)))                //catch a valid integer that is in the catalog. no duplicates!
-                    {
-                        MessageBox.Show("That item is already in the truck list.");
-                        return;
-                    }
-                    else
-                    {
-                        GlobalTruckCatalog.Add(int.Parse(newTruck_textbox.Text));                            //the item passed the test. add it to global catalog
-                        TempTruckList.Add(int.Parse(newTruck_textbox.Text));                                //add to the temp list
-                        newTruck_textbox.Clear();
-
-                        GlobalTruckCatalog.Sort();
-                        TempTruckList.Sort();
-
-                        UpdateTruckListBox();
-                        return;
-                    }
-                }
-                else
-                {                                                                               //catch any special symbols. I don't want a " & " crashing my precious program.
-                    MessageBox.Show("Please enter a number");
-                }
+            {
+                AddTruck();
             }
             else
             {
@@ -437,9 +405,41 @@ namespace MicroframeQ
             }
         }
 
-        private void Settings_Click(object sender, EventArgs e)
+        public void AddTruck()
         {
+            if (newTruck_textbox.Text == "")                                                            //blank statement. pop up warning for nothing there was annoying me.
+            {
+                return;
+            }
+            else if (int.TryParse(newTruck_textbox.Text, out int value))                                //item is a valid integer
+            {
+                if (GlobalTruckCatalog.Contains(int.Parse(newTruck_textbox.Text)))                       //catch a valid integer that is in the trucklist_temp
+                {
+                    MessageBox.Show("Item already added.");
+                    return;
+                }
+                else if (TempTruckList.Contains(int.Parse(newTruck_textbox.Text)))                //catch a valid integer that is in the catalog. no duplicates!
+                {
+                    MessageBox.Show("That item is already in the truck list.");
+                    return;
+                }
+                else
+                {
+                    GlobalTruckCatalog.Add(int.Parse(newTruck_textbox.Text));                            //the item passed the test. add it to global catalog
+                    TempTruckList.Add(int.Parse(newTruck_textbox.Text));                                //add to the temp list
+                    newTruck_textbox.Clear();
 
+                    GlobalTruckCatalog.Sort();
+                    TempTruckList.Sort();
+
+                    UpdateTruckListBox();
+                    return;
+                }
+            }
+            else
+            {                                                                               //catch any special symbols. I don't want a " & " crashing my precious program.
+                MessageBox.Show("Please enter a number");
+            }
         }
 
         private void ClearTrucksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -741,9 +741,8 @@ namespace MicroframeQ
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(e.GetType());
-            //PreviewKeyDown(Keys.Enter);
-            //NewTruck_textbox_KeyPress(newTruck_textbox, e.Equals(KeyPressEventArgs));
+            AddTruck();
         }
+
     }
 }

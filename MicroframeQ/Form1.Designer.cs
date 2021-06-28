@@ -76,9 +76,10 @@
             // 
             // truckListBox
             // 
+            this.truckListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.truckListBox.BackColor = System.Drawing.SystemColors.HighlightText;
             this.truckListBox.FormattingEnabled = true;
-            this.truckListBox.Location = new System.Drawing.Point(408, 166);
+            this.truckListBox.Location = new System.Drawing.Point(390, 140);
             this.truckListBox.Name = "truckListBox";
             this.truckListBox.Size = new System.Drawing.Size(131, 277);
             this.truckListBox.TabIndex = 0;
@@ -87,8 +88,9 @@
             // 
             // towerBox1
             // 
+            this.towerBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.towerBox1.FormattingEnabled = true;
-            this.towerBox1.Location = new System.Drawing.Point(74, 166);
+            this.towerBox1.Location = new System.Drawing.Point(75, 138);
             this.towerBox1.Name = "towerBox1";
             this.towerBox1.Size = new System.Drawing.Size(131, 277);
             this.towerBox1.TabIndex = 1;
@@ -97,8 +99,9 @@
             // 
             // towerBox2
             // 
+            this.towerBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.towerBox2.FormattingEnabled = true;
-            this.towerBox2.Location = new System.Drawing.Point(758, 166);
+            this.towerBox2.Location = new System.Drawing.Point(742, 138);
             this.towerBox2.Name = "towerBox2";
             this.towerBox2.Size = new System.Drawing.Size(131, 277);
             this.towerBox2.TabIndex = 2;
@@ -107,7 +110,8 @@
             // 
             // moveTower1
             // 
-            this.moveTower1.Location = new System.Drawing.Point(258, 315);
+            this.moveTower1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.moveTower1.Location = new System.Drawing.Point(258, 287);
             this.moveTower1.Name = "moveTower1";
             this.moveTower1.Size = new System.Drawing.Size(75, 23);
             this.moveTower1.TabIndex = 3;
@@ -117,7 +121,8 @@
             // 
             // moveTower2
             // 
-            this.moveTower2.Location = new System.Drawing.Point(615, 315);
+            this.moveTower2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.moveTower2.Location = new System.Drawing.Point(610, 287);
             this.moveTower2.Name = "moveTower2";
             this.moveTower2.Size = new System.Drawing.Size(75, 23);
             this.moveTower2.TabIndex = 4;
@@ -127,7 +132,8 @@
             // 
             // NextButton2
             // 
-            this.NextButton2.Location = new System.Drawing.Point(758, 477);
+            this.NextButton2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.NextButton2.Location = new System.Drawing.Point(742, 449);
             this.NextButton2.Name = "NextButton2";
             this.NextButton2.Size = new System.Drawing.Size(131, 23);
             this.NextButton2.TabIndex = 5;
@@ -137,7 +143,8 @@
             // 
             // NextButton1
             // 
-            this.NextButton1.Location = new System.Drawing.Point(74, 477);
+            this.NextButton1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.NextButton1.Location = new System.Drawing.Point(75, 449);
             this.NextButton1.Name = "NextButton1";
             this.NextButton1.Size = new System.Drawing.Size(131, 23);
             this.NextButton1.TabIndex = 6;
@@ -147,7 +154,8 @@
             // 
             // newTruck_textbox
             // 
-            this.newTruck_textbox.Location = new System.Drawing.Point(408, 449);
+            this.newTruck_textbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.newTruck_textbox.Location = new System.Drawing.Point(390, 423);
             this.newTruck_textbox.Name = "newTruck_textbox";
             this.newTruck_textbox.Size = new System.Drawing.Size(131, 20);
             this.newTruck_textbox.TabIndex = 8;
@@ -155,7 +163,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(408, 475);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Location = new System.Drawing.Point(390, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 23);
             this.button1.TabIndex = 9;
@@ -169,7 +178,7 @@
             this.toolStripDropDownButton1});
             this.SettingsDropDown.Location = new System.Drawing.Point(0, 0);
             this.SettingsDropDown.Name = "SettingsDropDown";
-            this.SettingsDropDown.Size = new System.Drawing.Size(1008, 25);
+            this.SettingsDropDown.Size = new System.Drawing.Size(918, 25);
             this.SettingsDropDown.TabIndex = 12;
             this.SettingsDropDown.Text = "Settings";
             // 
@@ -370,8 +379,9 @@
             // 
             // TowerBox1_live
             // 
+            this.TowerBox1_live.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TowerBox1_live.AutoSize = true;
-            this.TowerBox1_live.Location = new System.Drawing.Point(255, 179);
+            this.TowerBox1_live.Location = new System.Drawing.Point(255, 190);
             this.TowerBox1_live.Name = "TowerBox1_live";
             this.TowerBox1_live.Size = new System.Drawing.Size(83, 13);
             this.TowerBox1_live.TabIndex = 13;
@@ -380,8 +390,9 @@
             // 
             // TowerBox2_live
             // 
+            this.TowerBox2_live.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TowerBox2_live.AutoSize = true;
-            this.TowerBox2_live.Location = new System.Drawing.Point(612, 179);
+            this.TowerBox2_live.Location = new System.Drawing.Point(607, 190);
             this.TowerBox2_live.Name = "TowerBox2_live";
             this.TowerBox2_live.Size = new System.Drawing.Size(83, 13);
             this.TowerBox2_live.TabIndex = 14;
@@ -390,10 +401,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(95, 124);
+            this.label3.Location = new System.Drawing.Point(96, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 22);
             this.label3.TabIndex = 17;
@@ -401,10 +413,11 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(782, 124);
+            this.label4.Location = new System.Drawing.Point(766, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 22);
             this.label4.TabIndex = 18;
@@ -412,10 +425,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(404, 124);
+            this.label2.Location = new System.Drawing.Point(386, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 22);
             this.label2.TabIndex = 19;
@@ -423,7 +437,8 @@
             // 
             // removetruck_button
             // 
-            this.removetruck_button.Location = new System.Drawing.Point(408, 501);
+            this.removetruck_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.removetruck_button.Location = new System.Drawing.Point(390, 475);
             this.removetruck_button.Name = "removetruck_button";
             this.removetruck_button.Size = new System.Drawing.Size(131, 23);
             this.removetruck_button.TabIndex = 20;
@@ -435,7 +450,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 646);
+            this.ClientSize = new System.Drawing.Size(918, 538);
             this.Controls.Add(this.removetruck_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -452,6 +467,7 @@
             this.Controls.Add(this.towerBox2);
             this.Controls.Add(this.towerBox1);
             this.Controls.Add(this.truckListBox);
+            this.MinimumSize = new System.Drawing.Size(920, 540);
             this.Name = "Form1";
             this.Text = "MicroframeQ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
